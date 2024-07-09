@@ -103,7 +103,7 @@ class _ListViewItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => DetailsPage(id:itemModel.id),
+            builder: (context) => DetailsPage(id: itemModel.id),
           ),
         );
       },
@@ -148,7 +148,7 @@ class _ListViewItem extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            itemModel.relaseDate.toString(),
+                            itemModel.relaseDateFormatted(),
                           ),
                         ],
                       ),
