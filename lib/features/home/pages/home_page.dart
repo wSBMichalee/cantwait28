@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Can\'t Wait 🤩'),
+        backgroundColor: Colors.deepPurpleAccent,
       ),
       body: const _HomePageBody(),
       floatingActionButton: FloatingActionButton(
