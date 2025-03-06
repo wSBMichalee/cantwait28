@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:cantwait28/models/item.model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 part 'home_state.dart';
 
@@ -16,7 +18,11 @@ class HomeCubit extends Cubit<HomeState> {
         .orderBy('release_date')
         .snapshots().listen(
       (items) {
-        emit(HomeState(items: items));
+        // ignore: non_constant_identifier_names
+        final ItemModels = items.docs.map((doc){
+          return ItemModel(id:doc['id'],title: doc['titel'], imageURL:doc['image_url'], relaseDate: (doc['release_date'] as Timestamp).toDate(),);
+        }).toList();
+        emit(HomeState(items: ItemModels));
       },
     )..onError(
         (error) {
