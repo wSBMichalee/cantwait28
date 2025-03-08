@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart' as ui_auth;
 
-
-
 class AuthGate extends StatelessWidget {
   const AuthGate({Key? key}) : super(key: key);
 
@@ -17,7 +15,8 @@ class AuthGate extends StatelessWidget {
         if (!snapshot.hasData) {
           return ui_auth.SignInScreen(
             providers: [
-             ui_auth.EmailAuthProvider(),
+              ui_auth.EmailAuthProvider(),
+              ui_auth.PhoneAuthProvider(),
             ],
           );
         }
