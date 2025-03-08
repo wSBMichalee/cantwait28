@@ -102,7 +102,8 @@ class _ListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailsPage(id: itemModel.id)));
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DetailsPage(id: itemModel.id)));
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -145,7 +146,7 @@ class _ListViewItem extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            itemModel.relaseDate.toString(),
+                            itemModel.relaseDateFormatted(),
                           ),
                         ],
                       ),
